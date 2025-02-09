@@ -1,2 +1,54 @@
-# Auto detect text files and perform LF normalization
+
 * text=auto
+*.txt text
+*.md text
+*.json text
+*.yml text
+*.yaml text
+*.xml text
+*.sh text
+*.cs text
+
+*.cs text diff=csharp
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.bmp binary
+*.tiff binary
+*.psd binary
+*.ico binary
+*.wav binary
+*.mp3 binary
+*.ogg binary
+*.aiff binary
+*.flac binary
+*.mov binary
+*.mp4 binary
+*.avi binary
+*.fbx binary
+*.obj binary
+*.mat binary
+*.asset binary
+*.unity binary
+*.prefab binary
+*.controller binary
+*.anim binary
+*.meta binary
+*.unitypackage binary
+
+# Убедитесь, что файлы сборки WebGL не сжимаются
+Dev_Build/Build/** -delta -diff
+
+*.log -text
+*.tmp -text
+*.temp -text
+
+*.sln text
+*.csproj text
+*.unityproj text
+*.userprefs text
+
+.gitattributes text
+.gitignore text
