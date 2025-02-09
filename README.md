@@ -10,8 +10,8 @@ FrostLine is a dynamic arena first-person shooter set in a winter medieval setti
 
 How to play:
 
-  Walk - "WASD" '/n'
-  Attack - "Mouse0" /n
+  Walk - "WASD"
+  Attack - "Mouse0"
   Dash - "Mouse1"
   Hook - "F"
   Slow-mo - "Q"
