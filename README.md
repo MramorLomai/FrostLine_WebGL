@@ -5,9 +5,7 @@ You can play by clicking this link:
 [FrostLine](https://clck.ru/3GM46t)
 
 Itch.io version:
-```markdown
 [![FrostLine by Alexander Drobov](https://itch.io/embed/3321778)](https://mramorlomai.itch.io/frostline)
-```
 
 FrostLine is a dynamic arena first-person shooter set in a winter medieval setting. Take on the role of a knight and defend the fortress against hordes of enemies. Similar to games like Quake, Ultrakill, Doom, and Half-Life.
 
