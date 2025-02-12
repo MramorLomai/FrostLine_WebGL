@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=1440 height=900></canvas>
+      <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -58,13 +58,13 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/Dev_Build.loader.js";
       var config = {
-        dataUrl: buildUrl + "/4b5d8f1a18f016913da01452f036ee06.data.unityweb",
+        dataUrl: buildUrl + "/bf9149440ecf3ec45f0f0b223e2b72d2.data.unityweb",
         frameworkUrl: buildUrl + "/cb9242f0fa4d401c5a4a3b04843cf98d.js.unityweb",
         codeUrl: buildUrl + "/a15796911867ba804d93408da13e652b.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Hlupic-Team",
         productName: "FrostLine",
-        productVersion: "1.6.8",
+        productVersion: "1.6.9",
         showBanner: unityShowBanner,
       };
 
@@ -93,11 +93,11 @@
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "1440px";
-        canvas.style.height = "900px";
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
       }
 
-      canvas.style.background = "url('" + buildUrl + "/3d69a6345c67697693d3212e8f8e9350.jpg.unityweb') center / cover";
+      canvas.style.background = "url('" + buildUrl + "/aaa22bd5fe32013d55bc735bb32cfaa5.jpg.unityweb') center / cover";
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
