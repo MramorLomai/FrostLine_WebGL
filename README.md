@@ -2,10 +2,10 @@ WebGL version of FrostLine (Made in Unity3D)
 > Made by Alexander Drobov (code) and Vladimir Kruglakov (art)
 
 You can play by clicking this link:
-[FrostLine](https://clck.ru/3GM46t)
+[FrostLine GitHub](https://clck.ru/3GM46t)
 
 Itch.io version:
-[FrostLine by Alexander Drobov](https://mramorlomai.itch.io/frostline)
+[FrostLine Itch.io](https://mramorlomai.itch.io/frostline)
 
 FrostLine is a dynamic arena first-person shooter set in a winter medieval setting. Take on the role of a knight and defend the fortress against hordes of enemies. Similar to games like Quake, Ultrakill, Doom, and Half-Life.
 
