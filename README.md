@@ -1,18 +1,18 @@
 WebGL версия игры **FrostLine** (Сделано в Unity3D)
-> Сделано Александром Дробовым (code :computer: :godmode:) и Владимиром Кругляковым (art :headphones: :art:)
+> Сделано Александром Дробовым (code) и Владимиром Кругляковым (art)
 
 
-Можно сыграть перейдя по этой ссылке :link::
+Можно сыграть перейдя по этой ссылке:
 [FrostLine GitHub](https://clck.ru/3GM46t)
 
-Itch.io версия :link::
+Itch.io версия:
 [FrostLine Itch.io](https://mramorlomai.itch.io/frostline)
 
-Ну или если ты хочешь скачать standalone версию на windows/~~linux~~ :link::
+Ну или если ты хочешь скачать standalone версию на windows/~~linux~~:
 [FrostLine PC](https://disk.yandex.ru/d/E8916kl56iHSUw)
 
 
-**FrostLine** — это динамичный арена-шутер на выживание от первого лица, действие которого разворачивается в зимнем средневековом сеттинге. Вам предстоит взять на себя роль рыцаря и защитить крепость от орд врагов. Игра сочетает в себе элементы классических шутеров, таких как **Quake, Ultrakill, Doom и Half-Life**.
+**FrostLine** — это динамичный арена-шутер на выживание от первого лица, действие которого разворачивается в зимнем средневековом сеттинге. Вам предстоит взять на себя роль рыцаря и защитить крепость от орд врагов. Игра сочетает в себе элементы классических шутеров, таких как __Quake, Ultrakill, Doom и Half-Life__.
 
 
 ![FrostLinePoster](https://github.com/user-attachments/assets/3db32614-dff6-4eca-acd0-79268bc0a492)
