@@ -132,11 +132,12 @@ img:hover {
 
 <script>
 function createSnowflake() {
+    console.log("Creating snowflake"); // Добавьте эту строку для отладки
     const snowflake = document.createElement('div');
     snowflake.classList.add('snowflake');
     snowflake.style.left = Math.random() * 100 + 'vw';
-    snowflake.style.opacity = Math.random() * 0.4 + 0.1; // Меньшая непрозрачность
-    snowflake.style.width = (Math.random() * 8 + 2) + 'px'; // Разные размеры
+    snowflake.style.opacity = Math.random() * 0.4 + 0.1;
+    snowflake.style.width = (Math.random() * 8 + 2) + 'px';
     snowflake.style.height = snowflake.style.width;
     snowflake.style.animation = `snowfall ${Math.random() * 3 + 3}s linear infinite`;
 
