@@ -93,6 +93,53 @@ img:hover {
     border-bottom: none;
 }
 
+/* Стили для скрытой кнопки */
+.easter-egg-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Стили для модального окна */
+.easter-egg-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1001;
+    text-align: center;
+}
+
+.easter-egg-modal img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ccc;
+}
+
 /* Снег */
 .snowflake {
     position: fixed;
@@ -163,6 +210,41 @@ function createSnowflake() {
 // Интервал создания снежинок
 const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 setInterval(createSnowflake, isMobile ? 150 : 80);
+
+// Список изображений для пасхалки
+const easterEggImages = [
+    "https://imgur.com/a/8N0ykm8",
+    "https://imgur.com/a/6g0kaiq",
+    "https://imgur.com/a/ZkaUeF9"
+];
+
+// Получаем элементы
+const easterEggButton = document.getElementById('easterEggButton');
+const easterEggModal = document.getElementById('easterEggModal');
+const easterEggImage = document.getElementById('easterEggImage');
+const closeModal = document.querySelector('.close');
+
+// Функция для открытия случайного изображения
+function openRandomImage() {
+    const randomIndex = Math.floor(Math.random() * easterEggImages.length);
+    easterEggImage.src = easterEggImages[randomIndex];
+    easterEggModal.style.display = 'block';
+}
+
+// Обработчик для кнопки
+easterEggButton.addEventListener('click', openRandomImage);
+
+// Закрытие модального окна
+closeModal.addEventListener('click', () => {
+    easterEggModal.style.display = 'none';
+});
+
+// Закрытие модального окна при клике вне его
+window.addEventListener('click', (event) => {
+    if (event.target === easterEggModal) {
+        easterEggModal.style.display = 'none';
+    }
+});
 </script>
 
 <div class="content-container">
@@ -192,4 +274,12 @@ setInterval(createSnowflake, isMobile ? 150 : 80);
         <li>Консоль разработчика - "~"</li>
     </ul>
     <p><strong>P.S.</strong> (Linux больше не поддерживается)</p>
+<!-- Скрытая кнопка для пасхалки -->
+    <div id="easterEggButton" class="easter-egg-button"></div>
+
+    <!-- Модальное окно для отображения изображения -->
+    <div id="easterEggModal" class="easter-egg-modal">
+        <span class="close">&times;</span>
+        <img id="easterEggImage" src="" alt="Пасхалка" />
+    </div>
 </div>
