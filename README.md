@@ -14,12 +14,12 @@ h1, h2, h3, h4, h5, h6 {
     color: #ffffff;
 }
 blockquote {
-    border-left: 4px solid #bb86fc;
+    border-left: 4px solid #4682B4;
     padding-left: 10px;
     color: #e0e0e0;
 }
 img {
-    border: 2px solid #bb86fc;
+    border: 2px solid #4169E1;
 }
 </style>
 
