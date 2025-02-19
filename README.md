@@ -3,6 +3,10 @@ body {
     background-color: #121212;
     color: #e0e0e0;
     font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
 }
 a {
     color: #6A9CFF;
@@ -21,7 +25,46 @@ blockquote {
 img {
     border: 2px solid #4169E1;
 }
+
+/* Снег */
+.snowflake {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(-10vh) translateX(0);
+    }
+    100% {
+        transform: translateY(100vh) translateX(20px);
+    }
+}
 </style>
+
+<script>
+function createSnowflake() {
+    const snowflake = document.createElement('div');
+    snowflake.classList.add('snowflake');
+    snowflake.style.left = Math.random() * 100 + 'vw';
+    snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+    snowflake.style.opacity = Math.random();
+    snowflake.style.animation = `snowfall ${Math.random() * 3 + 2}s linear infinite`;
+
+    document.body.appendChild(snowflake);
+
+    setTimeout(() => {
+        snowflake.remove();
+    }, 5000);
+}
+
+setInterval(createSnowflake, 50);
+</script>
 
 # WebGL версия игры **FrostLine** (Сделано в Unity3D)
 > Сделано Александром Дробовым (code) и Владимиром Кругляковым (art)
