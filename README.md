@@ -93,6 +93,34 @@
             animation: snowfall linear infinite;
         }
 
+        .easter-egg-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+            border: 2px solid #4169E1;
+            transition: all 0.3s ease;
+        }
+
+        .easter-egg-button:hover {
+            background-color: rgba(65, 105, 225, 0.3);
+            transform: scale(1.1);
+        }
+
+        .easter-egg-button::after {
+            content: "❄️";
+            position: absolute;
+            font-size: 20px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
         @keyframes snowfall {
             0% {
                 transform: translateY(0vh) translateX(0) rotate(0deg);
@@ -101,6 +129,20 @@
             100% {
                 transform: translateY(100vh) translateX(20vw) rotate(360deg);
                 opacity: 0.3;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .content-container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2em;
             }
         }
     </style>
@@ -178,13 +220,15 @@
             const easterEggModal = document.getElementById('easterEggModal');
             const easterEggImage = document.getElementById('easterEggImage');
 
-            easterEggButton.addEventListener('click', () => {
+            // Обработчик для кнопки пасхалки
+            easterEggButton.addEventListener('click', (e) => {
+                e.stopPropagation();
                 const randomIndex = Math.floor(Math.random() * easterEggImages.length);
                 easterEggImage.src = easterEggImages[randomIndex];
                 easterEggModal.style.display = 'block';
             });
 
-            // Закрытие модальных окон
+            // Общий обработчик закрытия для всех модальных окон
             closeButtons.forEach(btn => {
                 btn.addEventListener('click', () => {
                     imageModal.style.display = 'none';
@@ -192,6 +236,7 @@
                 });
             });
 
+            // Закрытие по клику вне окна
             window.addEventListener('click', (event) => {
                 if (event.target === imageModal || event.target === easterEggModal) {
                     imageModal.style.display = 'none';
