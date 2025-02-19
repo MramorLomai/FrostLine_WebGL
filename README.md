@@ -156,34 +156,30 @@ setInterval(createSnowflake, snowflakeInterval);
 </script>
 
 <div class="content-container">
-    {{ "## WebGL версия игры **FrostLine** (Сделано в Unity3D)
-    > Сделано Александром Дробовым (code) и Владимиром Кругляковым (art)
-
-    Можно сыграть перейдя по этой ссылке: [FrostLine GitHub](https://clck.ru/3GM46t)
-
-    Itch.io версия: [FrostLine Itch.io](https://mramorlomai.itch.io/frostline)
-
-    Ну или если ты хочешь скачать standalone версию на windows/~~linux~~: [FrostLine PC](https://disk.yandex.ru/d/E8916kl56iHSUw)
-
-    **FrostLine** — это динамичный арена-шутер на выживание от первого лица, действие которого разворачивается в зимнем средневековом сеттинге. Вам предстоит взять на себя роль рыцаря и защитить крепость от орд врагов. Игра сочетает в себе элементы классических шутеров, таких как __Quake, Ultrakill, Doom и Half-Life__.
-
-    ![FrostLinePoster](https://github.com/user-attachments/assets/3db32614-dff6-4eca-acd0-79268bc0a492)
-
-    Управление:
-
-    - Ходьба - "WASD"/Стрелки
-    * Приседание/Быстрое приземление - "Ctrl"
-    + Атака - "Mouse0"
-    - Перезарядка - "R" / Авто перезарядка
-    * Рывок - "Mouse1"
-    + Мясной крюк - "F"
-    - Slow-mo - "Q"
-    * Прыжок - "Space"
-    + Двойной прыжок - 2x "Space"
-    - Бег - "Shift"
-    * Смена оружия - "MouseWhl"/ Цифры
-    + Пауза  - "Escape"
-    - Консоль разработчика - "~"
-
-    P.S. (Linux больше не поддерживается)" | markdownify }}
+    <h1>WebGL версия игры <strong>FrostLine</strong> (Сделано в Unity3D)</h1>
+    <blockquote>
+        <p>Сделано Александром Дробовым (code) и Владимиром Кругляковым (art)</p>
+    </blockquote>
+    <p>Можно сыграть перейдя по этой ссылке: <a href="https://clck.ru/3GM46t">FrostLine GitHub</a></p>
+    <p>Itch.io версия: <a href="https://mramorlomai.itch.io/frostline">FrostLine Itch.io</a></p>
+    <p>Ну или если ты хочешь скачать standalone версию на windows/<s>linux</s>: <a href="https://disk.yandex.ru/d/E8916kl56iHSUw">FrostLine PC</a></p>
+    <p><strong>FrostLine</strong> — это динамичный арена-шутер на выживание от первого лица, действие которого разворачивается в зимнем средневековом сеттинге. Вам предстоит взять на себя роль рыцаря и защитить крепость от орд врагов. Игра сочетает в себе элементы классических шутеров, таких как <strong>Quake, Ultrakill, Doom и Half-Life</strong>.</p>
+    <img src="https://github.com/user-attachments/assets/3db32614-dff6-4eca-acd0-79268bc0a492" alt="FrostLinePoster" />
+    <h2>Управление:</h2>
+    <ul>
+        <li>Ходьба - "WASD"/Стрелки</li>
+        <li>Приседание/Быстрое приземление - "Ctrl"</li>
+        <li>Атака - "Mouse0"</li>
+        <li>Перезарядка - "R" / Авто перезарядка</li>
+        <li>Рывок - "Mouse1"</li>
+        <li>Мясной крюк - "F"</li>
+        <li>Slow-mo - "Q"</li>
+        <li>Прыжок - "Space"</li>
+        <li>Двойной прыжок - 2x "Space"</li>
+        <li>Бег - "Shift"</li>
+        <li>Смена оружия - "MouseWhl"/ Цифры</li>
+        <li>Пауза - "Escape"</li>
+        <li>Консоль разработчика - "~"</li>
+    </ul>
+    <p><strong>P.S.</strong> (Linux больше не поддерживается)</p>
 </div>
