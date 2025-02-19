@@ -101,16 +101,20 @@ img:hover {
     background: white;
     border-radius: 50%;
     pointer-events: none;
-    z-index: 2;
+    z-index: 9999; /* Увеличиваем для приоритета поверх всех элементов */
     filter: blur(1px);
+    top: 0; /* Начинаем с верхней границы экрана */
+    animation: snowfall linear infinite;
 }
 
 @keyframes snowfall {
     0% {
-        transform: translateY(-10vh) translateX(0) rotate(0deg);
+        transform: translateY(0vh) translateX(0) rotate(0deg); /* Старт с верха экрана */
+        opacity: 1;
     }
     100% {
-        transform: translateY(100vh) translateX(20px) rotate(360deg);
+        transform: translateY(100vh) translateX(20vw) rotate(360deg);
+        opacity: 0.3;
     }
 }
 
@@ -132,27 +136,33 @@ img:hover {
 
 <script>
 function createSnowflake() {
-    console.log("Creating snowflake"); // Добавьте эту строку для отладки
     const snowflake = document.createElement('div');
     snowflake.classList.add('snowflake');
+    
+    // Настройки для снежинки
     snowflake.style.left = Math.random() * 100 + 'vw';
-    snowflake.style.opacity = Math.random() * 0.4 + 0.1;
-    snowflake.style.width = (Math.random() * 8 + 2) + 'px';
-    snowflake.style.height = snowflake.style.width;
-    snowflake.style.animation = `snowfall ${Math.random() * 3 + 3}s linear infinite`;
-
+    snowflake.style.opacity = Math.random() * 0.6 + 0.3; // Увеличиваем видимость
+    const size = Math.random() * 8 + 4;
+    snowflake.style.width = size + 'px';
+    snowflake.style.height = size + 'px';
+    
+    // Анимация с рандомной скоростью
+    const duration = Math.random() * 3 + 5;
+    snowflake.style.animation = `snowfall ${duration}s linear infinite`;
+    
+    // Добавляем снежинку непосредственно в body
     document.body.appendChild(snowflake);
 
-    setTimeout(() => {
-        snowflake.remove();
-    }, 6000);
+    // Удаление через 10 секунд для безопасности
+    setTimeout(() => snowflake.remove(), duration * 1000 + 1000);
 }
 
-// Создаем меньше снежинок на мобильных устройствах
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-const snowflakeInterval = isMobile ? 200 : 100;
+// Тестовая снежинка для проверки (раскомментируйте для проверки)
+// createSnowflake();
 
-setInterval(createSnowflake, snowflakeInterval);
+// Интервал создания снежинок
+const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+setInterval(createSnowflake, isMobile ? 150 : 80);
 </script>
 
 <div class="content-container">
