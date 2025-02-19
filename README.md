@@ -224,9 +224,9 @@
         document.addEventListener('DOMContentLoaded', () => {
             // Список изображений для пасхалки
             const easterEggImages = [
-                "https://i.imgur.com/8N0ykm8.png",
-                "https://i.imgur.com/6g0kaiq.png",
-                "https://i.imgur.com/ZkaUeF9.png"
+                "https://github.com/user-attachments/assets/bdd53968-57fc-43e7-b121-f0690855bff6",
+                "https://github.com/user-attachments/assets/2de2e4af-76ef-47b9-bfe2-dc344c995a9b",
+                "https://github.com/user-attachments/assets/2f02bba7-83b3-4b60-b6bf-c374afd0e829"
             ];
 
             // Получаем элементы
