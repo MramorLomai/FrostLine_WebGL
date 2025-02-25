@@ -1,4 +1,3 @@
-
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -17,6 +16,17 @@
             line-height: 1.6;
             max-width: 1200px;
             margin: 0 auto;
+        }
+        .header-logo {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 200px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .header-logo:hover {
+            transform: scale(1.05);
         }
         .content-container {
             position: relative;
@@ -64,7 +74,7 @@
             transition: transform 0.3s ease;
         }
         .image-modal.open img {
-            transform: scale(1.35); /* Увеличение изображения на 35% */
+            transform: scale(1.35);
         }
         .close {
             position: absolute;
@@ -139,6 +149,9 @@
     </style>
 </head>
 <body>
+    <a href="https://github.com/user-attachments/assets/24c8490e-d321-438e-8125-5e51a37249b4">
+        <img src="https://github.com/user-attachments/assets/24c8490e-d321-438e-8125-5e51a37249b4" alt="FrostLine Logo" class="header-logo">
+    </a>
     <div class="content-container">
         <h1>WebGL версия игры <strong>FrostLine</strong> (Сделано в Unity3D)</h1>
         <blockquote>
@@ -183,21 +196,18 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Инициализация модального окна для изображений
             const imageModal = document.getElementById('imageModal');
             const modalImage = document.getElementById('modalImage');
             const closeButtons = document.querySelectorAll('.close');
 
-            // Обработчики для всех кликабельных изображений
             document.querySelectorAll('.clickable-image').forEach(img => {
                 img.addEventListener('click', () => {
                     modalImage.src = img.src;
                     imageModal.style.display = 'block';
-                    imageModal.classList.add('open'); // Добавляем класс для увеличения изображения
+                    imageModal.classList.add('open');
                 });
             });
 
-            // Инициализация пасхалки
             const easterEggImages = [
                 "https://github.com/user-attachments/assets/bdd53968-57fc-43e7-b121-f0690855bff6",
                 "https://github.com/user-attachments/assets/2de2e4af-76ef-47b9-bfe2-dc344c995a9b",
@@ -207,42 +217,37 @@
             const easterEggModal = document.getElementById('easterEggModal');
             const easterEggImage = document.getElementById('easterEggImage');
 
-            // Обработчик для кнопки пасхалки
             easterEggButton.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const randomIndex = Math.floor(Math.random() * easterEggImages.length);
                 easterEggImage.src = easterEggImages[randomIndex];
                 easterEggModal.style.display = 'block';
-                easterEggModal.classList.add('open'); // Добавляем класс для увеличения изображения
+                easterEggModal.classList.add('open');
             });
 
-            // Общий обработчик закрытия для всех модальных окон
             closeButtons.forEach(btn => {
                 btn.addEventListener('click', () => {
                     imageModal.style.display = 'none';
                     easterEggModal.style.display = 'none';
-                    imageModal.classList.remove('open'); // Убираем класс для уменьшения изображения
-                    easterEggModal.classList.remove('open'); // Убираем класс для уменьшения изображения
+                    imageModal.classList.remove('open');
+                    easterEggModal.classList.remove('open');
                 });
             });
 
-            // Закрытие по клику вне окна
             window.addEventListener('click', (event) => {
                 if (event.target === imageModal || event.target === easterEggModal) {
                     imageModal.style.display = 'none';
                     easterEggModal.style.display = 'none';
-                    imageModal.classList.remove('open'); // Убираем класс для уменьшения изображения
-                    easterEggModal.classList.remove('open'); // Убираем класс для уменьшения изображения
+                    imageModal.classList.remove('open');
+                    easterEggModal.classList.remove('open');
                 }
             });
 
-            // Обработчик ошибок для изображений
             modalImage.onerror = easterEggImage.onerror = function() {
                 console.error("Ошибка загрузки изображения:", this.src);
                 this.parentElement.style.display = 'none';
             };
 
-            // Создание снежинок
             function createSnowflake() {
                 const snowflake = document.createElement('div');
                 snowflake.classList.add('snowflake');
@@ -257,7 +262,6 @@
                 setTimeout(() => snowflake.remove(), duration * 1000 + 1000);
             }
 
-            // Интервал создания снежинок
             const isMobile = /Mobi|Android/i.test(navigator.userAgent);
             setInterval(createSnowflake, isMobile ? 150 : 80);
         });
