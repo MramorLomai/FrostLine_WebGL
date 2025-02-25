@@ -40,26 +40,33 @@
             transform: scale(1.02) translateY(-2px);
             box-shadow: 0 4px 15px rgba(65, 105, 225, 0.4);
         }
-        .image-modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 90%;
-            max-width: 800px;
-            background-color: rgba(0, 0, 0, 0.95);
-            padding: 20px;
-            border-radius: 15px;
-            z-index: 1001;
-            text-align: center;
-        }
-        .image-modal img {
-            max-width: 100%;
-            max-height: 80vh;
-            border-radius: 10px;
-            border: 2px solid #4169E1;
-        }
+  .image-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    z-index: 1001;
+    text-align: center;
+    overflow: hidden;
+}
+
+.image-modal img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 10px;
+    border: 2px solid #4169E1;
+    transition: transform 0.3s ease;
+}
+
+.image-modal.open img {
+    transform: scale(1.35); /* Увеличение изображения на 35% */
+}
         .close {
             position: absolute;
             top: 10px;
