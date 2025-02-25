@@ -150,7 +150,7 @@
 </head>
 <body>
     <a href="https://github.com/user-attachments/assets/24c8490e-d321-438e-8125-5e51a37249b4">
-        <img src="https://github.com/user-attachments/assets/24c8490e-d321-438e-8125-5e51a37249b4" alt="FrostLine Logo" class="header-logo">
+       <img src="https://raw.githubusercontent.com/username/repository/branch/path/to/image.png" alt="FrostLine Logo" class="header-logo">
     </a>
     <div class="content-container">
         <h1>WebGL версия игры <strong>FrostLine</strong> (Сделано в Unity3D)</h1>
