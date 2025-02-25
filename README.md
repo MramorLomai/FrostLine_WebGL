@@ -19,6 +19,7 @@
         }
         .header-logo {
             display: block;
+            mix-blend-mode: multiply;
             margin: 0 auto 20px;
             max-width: 200px;
             height: auto;
