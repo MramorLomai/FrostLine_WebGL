@@ -183,70 +183,84 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Инициализация модального окна для изображений
-            const imageModal = document.getElementById('imageModal');
-            const modalImage = document.getElementById('modalImage');
-            const closeButtons = document.querySelectorAll('.close');
-            // Обработчики для всех кликабельных изображений
-            document.querySelectorAll('.clickable-image').forEach(img => {
-                img.addEventListener('click', () => {
-                    modalImage.src = img.src;
-                    imageModal.style.display = 'block';
-                });
-            });
-            // Инициализация пасхалки
-            const easterEggImages = [
-                "https://github.com/user-attachments/assets/bdd53968-57fc-43e7-b121-f0690855bff6",
-                "https://github.com/user-attachments/assets/2de2e4af-76ef-47b9-bfe2-dc344c995a9b",
-                "https://github.com/user-attachments/assets/2f02bba7-83b3-4b60-b6bf-c374afd0e829"
-            ];
-            const easterEggButton = document.getElementById('easterEggButton');
-            const easterEggModal = document.getElementById('easterEggModal');
-            const easterEggImage = document.getElementById('easterEggImage');
-            // Обработчик для кнопки пасхалки
-            easterEggButton.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const randomIndex = Math.floor(Math.random() * easterEggImages.length);
-                easterEggImage.src = easterEggImages[randomIndex];
-                easterEggModal.style.display = 'block';
-            });
-            // Общий обработчик закрытия для всех модальных окон
-            closeButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    imageModal.style.display = 'none';
-                    easterEggModal.style.display = 'none';
-                });
-            });
-            // Закрытие по клику вне окна
-            window.addEventListener('click', (event) => {
-                if (event.target === imageModal || event.target === easterEggModal) {
-                    imageModal.style.display = 'none';
-                    easterEggModal.style.display = 'none';
-                }
-            });
-            // Обработчик ошибок для изображений
-            modalImage.onerror = easterEggImage.onerror = function() {
-                console.error("Ошибка загрузки изображения:", this.src);
-                this.parentElement.style.display = 'none';
-            };
-            // Создание снежинок
-            function createSnowflake() {
-                const snowflake = document.createElement('div');
-                snowflake.classList.add('snowflake');
-                snowflake.style.left = Math.random() * 100 + 'vw';
-                snowflake.style.opacity = Math.random() * 0.6 + 0.3;
-                const size = Math.random() * 8 + 4;
-                snowflake.style.width = size + 'px';
-                snowflake.style.height = size + 'px';
-                const duration = Math.random() * 3 + 5;
-                snowflake.style.animation = `snowfall ${duration}s linear infinite`;
-                document.body.appendChild(snowflake);
-                setTimeout(() => snowflake.remove(), duration * 1000 + 1000);
-            }
-            // Интервал создания снежинок
-            const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-            setInterval(createSnowflake, isMobile ? 150 : 80);
+    // Инициализация модального окна для изображений
+    const imageModal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const closeButtons = document.querySelectorAll('.close');
+
+    // Обработчики для всех кликабельных изображений
+    document.querySelectorAll('.clickable-image').forEach(img => {
+        img.addEventListener('click', () => {
+            modalImage.src = img.src;
+            imageModal.style.display = 'block';
+            imageModal.classList.add('open'); // Добавляем класс для увеличения изображения
         });
+    });
+
+    // Инициализация пасхалки
+    const easterEggImages = [
+        "https://github.com/user-attachments/assets/bdd53968-57fc-43e7-b121-f0690855bff6",
+        "https://github.com/user-attachments/assets/2de2e4af-76ef-47b9-bfe2-dc344c995a9b",
+        "https://github.com/user-attachments/assets/2f02bba7-83b3-4b60-b6bf-c374afd0e829"
+    ];
+    const easterEggButton = document.getElementById('easterEggButton');
+    const easterEggModal = document.getElementById('easterEggModal');
+    const easterEggImage = document.getElementById('easterEggImage');
+
+    // Обработчик для кнопки пасхалки
+    easterEggButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const randomIndex = Math.floor(Math.random() * easterEggImages.length);
+        easterEggImage.src = easterEggImages[randomIndex];
+        easterEggModal.style.display = 'block';
+        easterEggModal.classList.add('open'); // Добавляем класс для увеличения изображения
+    });
+
+    // Общий обработчик закрытия для всех модальных окон
+    closeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            imageModal.style.display = 'none';
+            easterEggModal.style.display = 'none';
+            imageModal.classList.remove('open'); // Убираем класс для уменьшения изображения
+            easterEggModal.classList.remove('open'); // Убираем класс для уменьшения изображения
+        });
+    });
+
+    // Закрытие по клику вне окна
+    window.addEventListener('click', (event) => {
+        if (event.target === imageModal || event.target === easterEggModal) {
+            imageModal.style.display = 'none';
+            easterEggModal.style.display = 'none';
+            imageModal.classList.remove('open'); // Убираем класс для уменьшения изображения
+            easterEggModal.classList.remove('open'); // Убираем класс для уменьшения изображения
+        }
+    });
+
+    // Обработчик ошибок для изображений
+    modalImage.onerror = easterEggImage.onerror = function() {
+        console.error("Ошибка загрузки изображения:", this.src);
+        this.parentElement.style.display = 'none';
+    };
+
+    // Создание снежинок
+    function createSnowflake() {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.style.left = Math.random() * 100 + 'vw';
+        snowflake.style.opacity = Math.random() * 0.6 + 0.3;
+        const size = Math.random() * 8 + 4;
+        snowflake.style.width = size + 'px';
+        snowflake.style.height = size + 'px';
+        const duration = Math.random() * 3 + 5;
+        snowflake.style.animation = `snowfall ${duration}s linear infinite`;
+        document.body.appendChild(snowflake);
+        setTimeout(() => snowflake.remove(), duration * 1000 + 1000);
+    }
+
+    // Интервал создания снежинок
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+    setInterval(createSnowflake, isMobile ? 150 : 80);
+});
     </script>
 </body>
 </html>"
