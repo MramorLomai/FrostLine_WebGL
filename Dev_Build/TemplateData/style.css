@@ -1,6 +1,9 @@
 body {
   padding: 0;
   margin: 0;
+  background-color: #121212; /* Темный фон для всей страницы */
+  color: #ffffff; /* Белый текст по умолчанию */
+  font-family: 'Press Start 2P', cursive; /* Пиксельный шрифт */
 }
 
 #unity-container {
@@ -19,7 +22,7 @@ body {
 }
 
 #unity-canvas {
-  background: #FFFFFF;
+  background: #1e1e1e; /* Темный фон для canvas */
 }
 
 .unity-mobile #unity-canvas {
@@ -38,21 +41,21 @@ body {
 #unity-logo {
   width: 154px;
   height: 130px;
-  background: url('unity-logo-light.png') no-repeat center;
+  background: url('unity-logo-dark.png') no-repeat center; /* Логотип для темной темы */
 }
 
 #unity-progress-bar-empty {
   width: 141px;
   height: 18px;
   margin: 10px 0 0 6.5px;
-  background: url('progress-bar-empty-light.png') no-repeat center;
+  background: url('progress-bar-empty-dark.png') no-repeat center; /* Пустой прогресс-бар для темной темы */
 }
 
 #unity-progress-bar-full {
   width: 0%;
   height: 18px;
   margin-top: 10px;
-  background: url('progress-bar-full-light.png') no-repeat center;
+  background: url('progress-bar-full-dark.png') no-repeat center; /* Полный прогресс-бар для темной темы */
 }
 
 #unity-footer {
@@ -74,8 +77,9 @@ body {
   float: right;
   margin-right: 10px;
   line-height: 38px;
-  font-family: Arial, sans-serif;
-  font-size: 18px;
+  font-family: 'Press Start 2P', cursive; /* Пиксельный шрифт для заголовка */
+  font-size: 14px; /* Уменьшенный размер для пиксельного шрифта */
+  color: #ffffff; /* Белый текст */
 }
 
 #unity-fullscreen-button {
@@ -90,7 +94,11 @@ body {
   left: 50%;
   top: 5%;
   transform: translateX(-50%);
-  background: white;
+  background: #333333; /* Темный фон для предупреждения */
   padding: 10px;
   display: none;
+  color: #ffffff; /* Белый текст */
+  font-family: 'Press Start 2P', cursive; /* Пиксельный шрифт для предупреждения */
+  font-size: 12px; /* Уменьшенный размер для пиксельного шрифта */
+  border: 2px solid #555555; /* Граница для выделения */
 }
