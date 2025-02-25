@@ -149,7 +149,7 @@
     </style>
 </head>
 <body>
-       <img src="https://imgur.com/a/ocP1pBf" alt="FrostLine Logo" class="header-logo">
+       <img src="https://github.com/user-attachments/assets/5cdb6abf-3c5b-4ffe-b646-a722a372f36b" alt="FrostLine Logo" class="header-logo">
     </a>
     <div class="content-container">
         <h1>WebGL версия игры <strong>FrostLine</strong> (Сделано в Unity3D)</h1>
