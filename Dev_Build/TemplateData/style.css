@@ -25,6 +25,15 @@ body {
   height: 100%;
 }
 
+#unity-canvas {
+  background: #1e1e1e; /* Темный фон для canvas */
+}
+
+.unity-mobile #unity-canvas {
+  width: 100%;
+  height: 100%;
+}
+
 #unity-loading-bar {
   position: absolute;
   left: 50%;
