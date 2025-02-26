@@ -10,26 +10,25 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600></canvas>
+      <!-- Убран canvas -->
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
       </div>
-      <div id="unity-warning"> </div>
+      <div id="unity-warning"></div>
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
         <div id="unity-build-title">FrostLine</div>
         <div id="unity-home-link">
-          <a href="https://mramorlomai.github.io/FrostLine_WebGL/" target="_blank">Visit Game Website</a>
+          <a href="https://www.yourmainwebsite.com" target="_blank">Visit Main Website</a>
         </div>
       </div>
     </div>
     <script>
       var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
@@ -72,26 +71,15 @@
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
         document.getElementsByTagName('head')[0].appendChild(meta);
         container.className = "unity-mobile";
-        canvas.className = "unity-mobile";
         unityShowBanner('WebGL builds are not supported on mobile devices.');
-      } else {
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
       }
 
-      // Function to change background image
-      function changeBackground(imageUrl) {
-        canvas.style.background = "url('" + imageUrl + "') center / cover";
-      }
-
-      // Set initial background
-      changeBackground(buildUrl + "/aaa22bd5fe32013d55bc735bb32cfaa5.jpg.unityweb");
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
+        createUnityInstance(document.createElement("div"), config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
