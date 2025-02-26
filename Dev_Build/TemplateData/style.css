@@ -2,6 +2,10 @@ body {
   padding: 0;
   margin: 0;
   background-color: #121212; /* Темный фон для всей страницы */
+  background-image: url('https://github.com/user-attachments/assets/4a378b07-1840-48ea-a296-e5645036db22'); /* Добавьте путь к вашему изображению */
+  background-size: cover; /* Масштабирование изображения для заполнения всей области */
+  background-position: center; /* Центрирование изображения */
+  background-repeat: no-repeat; /* Отключение повторения изображения */
   color: #ffffff; /* Белый текст по умолчанию */
   font-family: 'Press Start 2P', cursive; /* Пиксельный шрифт */
 }
